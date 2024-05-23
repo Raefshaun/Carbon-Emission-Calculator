@@ -10,29 +10,137 @@
     <script src="script.js"></script>
     <title>Carbon Emission Calculator</title>
 </head>
+
 <body>
+    <div class="bg-image"></div>
     <div class="main">
         <div class="header">
             <h1>CARBON FOOTPRINT CALCULATOR</h1>
         </div>
-        <div class="center">
+        <div id="main-menu">
             <div class="household">
                 <hr />
                 <label>Number of Household Members</label><br/>
-                <input type="number" min="1" onkeypress="noDecimals(event)">
-                <input type="submit" class="btn btn-success" onclick="" value="Save"><br />
+                <div class="hshold-mmbrs-container">
+                    <input type="number" id="household-number" value="1" class="form-control" min="1" onkeypress="noDecimals(event)">
+                    <input type="button" class="btn btn-success" onclick="saveHousehold()" value="Save"><br />
+                </div>
             </div>
-            <div>
+            <div class="main-menu-buttons">
                 <hr />
-                <h2>MAIN MENU</h2>
-                <a href="./transpo.html"><input type="submit" class="Btn width btn btn-success my-auto p-2" onclick="" value="Transportation"></a><br/>
-                <a href="./energy.html"><input type="submit" class="Btn width btn btn-success my-auto p-2" onclick="" value="Energy Usage"></a><br/>
-                <a href="./water.html"><input type="submit" class="Btn width btn btn-success my-auto p-2" onclick="" value="Water Usage"></a><br/>
-                <a href="./waste.html"><input type="submit" class="Btn width btn btn-success my-auto p-2" onclick="" value="Waste Management"></a><br/>
-                <a href="./diet.html"><input type="submit" class="Btn width btn btn-success my-auto p-2" onclick="" value="Diet"></a><br/>
-                <a href="./total.html"><input type="submit" class="Btn width btn btn-success my-auto p-2" onclick="" value="Total Carbon Emission"></a>
+                <h2 style="font-weight: bold;">MAIN MENU</h2>
+                <input type="submit" class="Btn width btn btn-success my-auto p-2" onclick="switchPage(this)" value="Transportation">
+                <input type="submit" class="Btn width btn btn-success my-auto p-2" onclick="switchPage(this)" value="Energy Usage">
+                <input type="submit" class="Btn width btn btn-success my-auto p-2" onclick="switchPage(this)" value="Water Usage">
+                <input type="submit" class="Btn width btn btn-success my-auto p-2" onclick="switchPage(this)" value="Waste Management">
+                <input type="submit" class="Btn width btn btn-success my-auto p-2" onclick="switchPage(this)" value="Diet">
+                <input type="submit" class="Btn width btn btn-success my-auto p-2" onclick="switchPage(this)" value="Total Carbon Emission">
             </div>
+            
+
+        </div>
+
+        <div id="transportation">
+            <h2 style="font-weight: bold;">TRANSPORTATION</h2>
+
+            <h4>Motorbike</h4>
+            <input id="motorbike" type="number" value="0" class="form-control" min="0">
+
+            <h4>Car</h4>
+            <input id="car" type="number" value="0" class="form-control" min="0">
+
+            <h4>Public Transportation</h4>
+            <input id="public-transportation" type="number" value="0" class="form-control" min="0">
+            
+            <input type="button" class="Btn width btn btn-success my-auto p-2" onclick="getTransportationEmission()" value="Submit">
+            <input type="button" class="Btn width btn btn-success my-auto p-2" onclick="switchPage(this)" value="Back">
+        </div>
+
+        <div id="energy">
+            <h2 style="font-weight: bold;">Energy Usage</h2>
+            
+            <h4>Monthly Electric Consumption in KwH</h4>
+            <input id="energy-usage" type="number" value="0" class="form-control" min="0">
+
+            <input type="button" class="Btn width btn btn-success my-auto p-2" onclick="getEnergyEmission()" value="Submit">
+            <input type="button" class="Btn width btn btn-success my-auto p-2" onclick="switchPage(this)" value="Back">
+        </div>
+
+        <div id="water">
+            <h2 style="font-weight: bold;">Water Usage</h2>
+            
+            <h4>Monthly Water Usage in Cubic Meters</h4>
+            <input id="water-usage" type="number" value="0" class="form-control" min="0">
+
+            <input type="button" class="Btn width btn btn-success my-auto p-2" onclick="getWaterEmission()" value="Submit">
+            <input type="button" class="Btn width btn btn-success my-auto p-2" onclick="switchPage(this)" value="Back">
+        </div>
+
+        <div id="waste">
+            <h2 style="font-weight: bold;">Waste Usage</h2>
+
+            <h4>Weekly Waste Production in Kg</h4>
+            <input id="waste-weekly" type="number" value="0" class="form-control" min="0">
+            
+            <input type="button" class="Btn width btn btn-success my-auto p-2" onclick="getWasteEmission()" value="Submit">
+            <input type="button" class="Btn width btn btn-success my-auto p-2" onclick="switchPage(this)" value="Back">
+        </div>
+
+        <div id="diet">
+            <h2 style="font-weight: bold;">Diet</h2>
+            
+            <h4>Daily Meat Consumption in Kg</h4>
+            <input id="diet-daily" type="number" value="0" class="form-control" min="0">
+
+            <input type="button" class="Btn width btn btn-success my-auto p-2" onclick="getDietEmission()" value="Submit">
+            <input type="button" class="Btn width btn btn-success my-auto p-2" onclick="switchPage(this)" value="Back">
+        </div>
+
+        <div id="total">
+            <h2 style="font-weight: bold;">Total</h2>
+        
+            <div class="result-container">
+                <div class="result-row">
+                    <div class="first-col"><h4>Category</h4></div>
+                    <div class="second-col"><h4>Amount</h4></div>
+                    <div class="third-col"><h4>Rating</h4></div>
+                </div>
+                <div class="result-row">
+                    <div class="first-col"><h4>Transportation</h4></div>
+                    <div class="second-col"><h4 id="transpo-emission">0</h4></div>
+                    <div class="third-col"><h4 id="transpo-rating">Low</h4></div>
+                </div>
+                <div class="result-row">
+                    <div class="first-col"><h4>Energy Usage</h4></div>
+                    <div class="second-col"><h4 id="energy-emission">0</h4></div>
+                    <div class="third-col"><h4 id="energy-rating">Low</h4></div>
+                </div>
+                <div class="result-row">
+                    <div class="first-col"><h4>Water Usage</h4></div>
+                    <div class="second-col"><h4 id="water-emission">0</h4></div>
+                    <div class="third-col"><h4 id="water-rating">Low</h4></div>
+                </div>
+                <div class="result-row">
+                    <div class="first-col"><h4>Waste Management</h4></div>
+                    <div class="second-col"><h4 id="waste-emission">0</h4></div>
+                    <div class="third-col"><h4 id="waste-rating">Low</h4></div>
+                </div>
+                <div class="result-row">
+                    <div class="first-col"><h4>Diet</h4></div>
+                    <div class="second-col"><h4 id="diet-emission">0</h4></div>
+                    <div class="third-col"><h4 id="diet-rating">Low</h4></div>
+                </div>
+                <div class="result-row">
+                    <div class="first-col"><h4>Total Carbon Emission</h4></div>
+                    <div class="second-col"><h4 id="total-emission">0</h4></div>
+                    <div class="third-col"><h4 id="total-rating">Low</h4></div>
+                </div>
+            </div>
+
+            <input type="button" class="Btn width btn btn-success my-auto p-2" onclick="" value="Submit">
+            <input type="button" class="Btn width btn btn-success my-auto p-2" onclick="switchPage(this)" value="Back">
         </div>
     </div>
 </body>
+
 </html>
