@@ -100,7 +100,6 @@ function computeTotals() {
     document.getElementById("diet-rating").innerText = getRating(dietEmissionF);
 
     let totalEmission = ((Number(transportationEmission) + Number(energyEmissionF) + Number(waterEmissionF) + Number(wasteEmissionF) + Number(dietEmissionF)).toFixed(2));
-    console.log(totalEmission);
     document.getElementById("total-emission").innerText = totalEmission  + "kg CO2";
     document.getElementById("total-rating").innerText = getRating(totalEmission);
 }
