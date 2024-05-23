@@ -74,6 +74,13 @@ h1{
 
 h2{
     font-size: 26px;
+    display: flex;
+    justify-content: center;
+}
+
+label{
+    display: flex;
+    justify-content: center;
 }
 
 .Btn{
