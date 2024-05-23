@@ -1,26 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @media only screen and (max-width:600px){
     body{
-      background-color: lightcoral;
-      align-content: center;
+        background-color: lightcoral;
+        align-content: center;
     }
-  }
+}
+ 
+* {
+    font-family: "Montserrat", 'Segoe UI', Tahoma, "Geneva", Verdana, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-  
+.header>h1 {
+    font-weight: bold;
+    margin-bottom: 4rem;
+}
+
 body{
-    background-color: limegreen;
+    background-color: #FFF5E0;
     overflow: hidden;
 }
 
 .center{
-    background-color: lightgreen;
+    background-color: #8DECB4;
     border-radius: 30px;
-    margin: 100px auto 100px auto;
+    margin: 0 auto 0 auto;
     width: 40%;
     height: auto;
     padding: 4vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    border: #141E46 2px solid;
 }
 
 .center > div{
@@ -52,6 +66,7 @@ input[type=number]{
 }
 
 .Btn{
+    background-color: #41B06E;
     border: none;
     color: white;
     padding: 5px 10px;
@@ -62,6 +77,10 @@ input[type=number]{
     border-radius: 8px;
 }
 
+.btn {
+    background-color: #41B06E;
+}
+
 .width{
-    width: 180px;
+    width: 100%;
 }
