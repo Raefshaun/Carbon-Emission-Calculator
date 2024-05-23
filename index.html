@@ -3,11 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
     <title>Carbon Emission Calculator</title>
 </head>
 <body>
-    
+    <div class="main">
+        <div class="header">
+            <h1>CARBON FOOTPRINT CALCULATOR</h1>
+        </div>
+        <div class="center">
+            <div class="household">
+                <hr />
+                <label>Number of Household Members</label><br/>
+                <input type="number">
+                <input type="submit" class="btn btn-success" onclick="" value="Save"><br />
+            </div>
+            <div class="">
+                <hr />
+                <h2>MAIN MENU</h2>
+                <a href="./transpo.html"><input type="submit" class="Btn width btn btn-success my-auto p-2" onclick="" value="Transportation"></a><br/>
+                <a href="./energy.html"><input type="submit" class="Btn width btn btn-success my-auto p-2" onclick="" value="Energy Usage"></a><br/>
+                <a href="./water.html"><input type="submit" class="Btn width btn btn-success my-auto p-2" onclick="" value="Water Usage"></a><br/>
+                <a href="./waste.html"><input type="submit" class="Btn width btn btn-success my-auto p-2" onclick="" value="Waste Management"></a><br/>
+                <a href="./diet.html"><input type="submit" class="Btn width btn btn-success my-auto p-2" onclick="" value="Diet"></a><br/>
+                <a href="./total.html"><input type="submit" class="Btn width btn btn-success my-auto p-2" onclick="" value="Total Carbon Emission"></a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

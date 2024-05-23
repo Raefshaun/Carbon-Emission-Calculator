@@ -1,0 +1,67 @@
+@media only screen and (max-width:600px){
+    body{
+      background-color: lightcoral;
+      align-content: center;
+    }
+  }
+
+  
+body{
+    background-color: limegreen;
+    overflow: hidden;
+}
+
+.center{
+    background-color: lightgreen;
+    border-radius: 30px;
+    margin: 100px auto 100px auto;
+    width: 40%;
+    height: auto;
+    padding: 4vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.center > div{
+    text-align: center;
+}
+
+.header{
+    margin-top: 75px;
+}
+
+
+h1{
+    padding: auto;
+    margin: auto;
+    text-align: center;
+}
+
+h2{
+    font-size: 26px;
+}
+
+input{
+    margin: 1vh;
+}
+
+input[type=number]{
+    width: 100px;
+    height: 20px;
+}
+
+.Btn{
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.width{
+    width: 180px;
+}
